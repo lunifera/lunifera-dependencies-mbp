@@ -13,13 +13,13 @@
 	<parent>
 		<groupId>org.lunifera.dependencies</groupId>
 		<artifactId>lunifera-dependencies-mbp</artifactId>
-		<version>0.1.6</version>
+		<version>0.1.7-SNAPSHOT</version>
 	</parent>
 
 	<groupId>org.lunifera.dependencies</groupId>
 	<artifactId>org.lunifera.dependencies.bundle.poi.ooxml</artifactId>
 	<packaging>bundle</packaging>
-	<version>3.9.0</version>
+	<version>3.9.1-SNAPSHOT</version>
 	<name>Lunifera Dependencies : Apache POI</name>
 	<description>POI and POI-OOXML</description>
 	<properties>
@@ -29,7 +29,7 @@
 	<scm>
 		<connection>${lunifera.scm.connection}</connection>
 		<developerConnection>${lunifera.scm.connection.dev}</developerConnection>
-		<tag>v0.1.6</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<dependencies>
