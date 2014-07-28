@@ -24,10 +24,10 @@
 	<description>JPAContainer</description>
 	<version>3.0.0</version>
 
-    <properties>
-        <vaadin.version>7.1.7</vaadin.version>
-        <vaadin.addon.jpacontainer.version>3.0.0</vaadin.addon.jpacontainer.version>        
-    </properties>
+	<properties>
+		<vaadin.version>7.1.7</vaadin.version>
+		<vaadin.addon.jpacontainer.version>3.0.0</vaadin.addon.jpacontainer.version>
+	</properties>
 
 	<scm>
 		<connection>${lunifera.scm.connection}</connection>
@@ -53,6 +53,19 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<!-- Ignore Check compatibility with Java API -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>animal-sniffer-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>enforce-java-api-compatibility</id>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
