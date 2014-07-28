@@ -1,0 +1,99 @@
+<!--#======================================================================= -->
+<!--# Copyright (c) 2012, 2013 Committers of lunifera.org - Lunifera.org. -->
+<!--# All rights reserved. This program and the accompanying materials -->
+<!--# are made available under the terms of the Eclipse Public License v1.0 -->
+<!--# which accompanies this distribution, and is available at -->
+<!--# http://www.eclipse.org/legal/epl-v10.html -->
+<!--# -->
+<!--# Contributors: -->
+<!--# Cristiano Gavião - initial API and implementation -->
+<!--#======================================================================= -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.lunifera.dependencies</groupId>
+		<artifactId>lunifera-dependencies-mbp</artifactId>
+		<version>0.1.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.lunifera.dependencies</groupId>
+	<artifactId>org.lunifera.dependencies.bundle.vaadin.addon.jpacontainer</artifactId>
+	<name>Lunifera Dependencies : Vaadin JPA Container</name>
+	<packaging>bundle</packaging>
+	<description>JPAContainer</description>
+	<version>3.0.0</version>
+
+    <properties>
+        <vaadin.version>7.1.7</vaadin.version>
+        <vaadin.addon.jpacontainer.version>3.0.0</vaadin.addon.jpacontainer.version>        
+    </properties>
+
+	<scm>
+		<connection>${lunifera.scm.connection}</connection>
+		<developerConnection>${lunifera.scm.connection.dev}</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.vaadin.addon</groupId>
+			<artifactId>jpacontainer</artifactId>
+			<version>${vaadin.addon.jpacontainer.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-server</artifactId>
+			<version>${vaadin.version}</version>
+		</dependency>
+		<!-- mvn install:install-file -Dfile=icepush.jar -DgroupId=org.icefaces 
+			\ -DartifactId=icepush -Dversion=2.0.0-alpha3 -Dpackaging=jar -->
+		<!-- mvn install:install-file -Dfile=icepush-gwt.jar -DgroupId=org.icefaces 
+			\ -DartifactId=icepush-gwt -Dversion=2.0.0-alpha3 -Dpackaging=jar -->
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<unpackBundle>true</unpackBundle>
+					<instructions>
+						<Bundle-SymbolicName>org.lunifera.dependencies.bundle.vaadin.addon.jpacontainer;singleton:=true</Bundle-SymbolicName>
+						<Embed-Dependency>
+							groupId=com.vaadin.addon;artifactId=jpacontainer;scope=compile;inline=true,
+						</Embed-Dependency>
+						<_exportcontents>
+							*
+						</_exportcontents>
+						<Import-Package>javax.persistence.*,javax.transaction.*,
+							javax.naming.*, com.vaadin.data.*,
+							com.vaadin.ui.*,
+							*
+						</Import-Package>
+						<_removeheaders>Ignore-Package</_removeheaders>
+						<_nouses>true</_nouses>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>vaadin-addons</id>
+			<url>http://maven.vaadin.com/vaadin-addons</url>
+		</repository>
+		<repository>
+			<id>vaadin-snapshots</id>
+			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

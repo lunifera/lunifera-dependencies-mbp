@@ -1,0 +1,91 @@
+<!--#======================================================================= -->
+<!--# Copyright (c) 2012, 2013 Committers of lunifera.org - Lunifera.org. -->
+<!--# All rights reserved. This program and the accompanying materials -->
+<!--# are made available under the terms of the Eclipse Public License v1.0 -->
+<!--# which accompanies this distribution, and is available at -->
+<!--# http://www.eclipse.org/legal/epl-v10.html -->
+<!--# -->
+<!--# Contributors: -->
+<!--# Cristiano Gavião - initial API and implementation -->
+<!--#======================================================================= -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.lunifera.dependencies</groupId>
+		<artifactId>lunifera-dependencies-mbp</artifactId>
+		<version>0.1.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.lunifera.dependencies</groupId>
+	<artifactId>org.lunifera.dependencies.bundle.poi.ooxml</artifactId>
+	<packaging>bundle</packaging>
+	<version>3.9.0</version>
+	<name>Lunifera Dependencies : Apache POI</name>
+	<description>POI and POI-OOXML</description>
+	<properties>
+		<poi-version>3.9</poi-version>
+	</properties>
+
+	<scm>
+		<connection>${lunifera.scm.connection}</connection>
+		<developerConnection>${lunifera.scm.connection.dev}</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>${poi-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>${poi-version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Name>org.apache.poi.ooxml</Bundle-Name>
+						<Bundle-Version>3.9.0</Bundle-Version>
+						<Bundle-SymbolicName>org.apache.poi.ooxml;singleton:=true</Bundle-SymbolicName>
+						<Export-Package>
+							org.apache.poi.*;-split-package:=merge-last,
+							org.openxmlformats.*,
+							schemaorg_apache_xmlbeans.system.*,
+							schemasMicrosoftComOfficeExcel.*,
+							schemasMicrosoftComOfficeOffice.*,
+							schemasMicrosoftComVml.*
+						</Export-Package>
+						<Embed-Dependency>
+							poi;inline=true,
+							poi-ooxml;scope=compile;inline=true,
+							poi-ooxml-schemas;inline=true,
+						</Embed-Dependency>
+						<Import-Package>!org.openxmlformats.schemas.officeDocument.x2006.math,
+							!org.openxmlformats.schemas.schemaLibrary.x2006.main,
+							!schemasMicrosoftComOfficePowerpoint,
+							!schemasMicrosoftComOfficeWord,
+							*
+						</Import-Package>
+						<_nouses>true</_nouses>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
