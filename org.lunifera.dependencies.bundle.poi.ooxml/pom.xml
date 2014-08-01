@@ -19,7 +19,7 @@
 	<groupId>org.lunifera.dependencies</groupId>
 	<artifactId>org.lunifera.dependencies.bundle.poi.ooxml</artifactId>
 	<packaging>bundle</packaging>
-	<version>3.9.1-SNAPSHOT</version>
+	<version>3.9.0_1-SNAPSHOT</version>
 	<name>Lunifera Dependencies : Apache POI</name>
 	<description>POI and POI-OOXML</description>
 	<properties>
