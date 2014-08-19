@@ -24,6 +24,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
+		<animal.sniffer.skip>true</animal.sniffer.skip>
 		<lunifera.releng.version>0.12.2</lunifera.releng.version>
 		<license.copyrightOwners>C4biz Softwares ME, Loetz KG</license.copyrightOwners>
 		<lunifera.gitrepo.name>lunifera-dependencies-mbp</lunifera.gitrepo.name>
