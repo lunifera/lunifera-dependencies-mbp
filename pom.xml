@@ -20,7 +20,7 @@
 
 	<groupId>org.lunifera.dependencies</groupId>
 	<artifactId>lunifera-dependencies-mbp</artifactId>
-	<version>0.3.2</version>
+	<version>0.3.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -35,7 +35,7 @@
 		<url>${lunifera.scm.url}</url>
 		<connection>${lunifera.scm.connection}</connection>
 		<developerConnection>${lunifera.scm.connection.dev}</developerConnection>
-		<tag>v0.3.2</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<distributionManagement>
 		<site>

@@ -13,14 +13,14 @@
 	<parent>
 		<groupId>org.lunifera.dependencies</groupId>
 		<artifactId>lunifera-dependencies-mbp</artifactId>
-		<version>0.3.2</version>
+		<version>0.3.3-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>org.lunifera.dependencies.bundle.vaadin.addon.jpacontainer</artifactId>
 	<name>Lunifera Dependencies : Vaadin JPA Container</name>
 	<packaging>bundle</packaging>
 	<description>JPAContainer</description>
-	<version>3.0.0-5</version>
+	<version>3.0.0-SNAPSHOT</version>
 
 	<properties>
 		<vaadin.addon.jpacontainer.version>3.0.0</vaadin.addon.jpacontainer.version>
@@ -31,7 +31,7 @@
 	<scm>
 		<connection>${lunifera.scm.connection}</connection>
 		<developerConnection>${lunifera.scm.connection.dev}</developerConnection>
-		<tag>v0.3.2</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<dependencies>
