@@ -16,14 +16,14 @@
 		<version>0.3.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>org.lunifera.dependencies</groupId>
 	<artifactId>org.lunifera.dependencies.bundle.poi.ooxml</artifactId>
 	<packaging>bundle</packaging>
-	<version>3.9.0_5-SNAPSHOT</version>
+	<version>3.9.1-SNAPSHOT</version>
 	<name>Lunifera Dependencies : Apache POI</name>
 	<description>POI and POI-OOXML</description>
 	<properties>
 		<poi-version>3.9</poi-version>
+		<lunifera.build.ignore.baseline>true</lunifera.build.ignore.baseline>
 	</properties>
 
 	<scm>
