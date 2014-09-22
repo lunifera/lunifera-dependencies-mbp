@@ -26,6 +26,7 @@
 		<vaadin.addon.jpacontainer.version>3.0.0</vaadin.addon.jpacontainer.version>
 		<vaadin.version>7.2.5</vaadin.version>
 		<lunifera.build.ignore.baseline>true</lunifera.build.ignore.baseline>
+		<lunifera.build.ignore.license>true</lunifera.build.ignore.license>
 	</properties>
 
 	<scm>
