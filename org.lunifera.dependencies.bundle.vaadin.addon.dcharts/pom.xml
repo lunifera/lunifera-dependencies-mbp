@@ -41,11 +41,6 @@
 			<artifactId>dcharts-widget</artifactId>
 			<version>${vaadin.addon.dcharts.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-server</artifactId>
-			<version>${vaadin.version}</version>
-		</dependency>
 		<!-- mvn install:install-file -Dfile=icepush.jar -DgroupId=org.icefaces 
 			\ -DartifactId=icepush -Dversion=2.0.0-alpha3 -Dpackaging=jar -->
 		<!-- mvn install:install-file -Dfile=icepush-gwt.jar -DgroupId=org.icefaces 
@@ -75,7 +70,7 @@
 					<instructions>
 						<Bundle-SymbolicName>org.lunifera.dependencies.bundle.vaadin.addon.dcharts;singleton:=true</Bundle-SymbolicName>
 						<Embed-Dependency>
-							groupId=org.vaadin.addons;artifactId=dcharts-widget;scope=compile;inline=true,
+							dependencies
 						</Embed-Dependency>
 						<Export-Package>
 							!com.vaadin.*,
