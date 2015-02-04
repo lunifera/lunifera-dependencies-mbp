@@ -74,6 +74,9 @@
 					<unpackBundle>true</unpackBundle>
 					<instructions>
 						<Bundle-SymbolicName>org.lunifera.dependencies.bundle.vaadin.addon.dcharts;singleton:=true</Bundle-SymbolicName>
+						<Embed-Dependency>
+							groupId=org.vaadin.addons;artifactId=dcharts-widget;scope=compile;inline=true,
+						</Embed-Dependency>
 						<Export-Package>
 							!com.vaadin.*,
 							!com.google.*,
