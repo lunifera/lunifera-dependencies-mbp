@@ -8,7 +8,8 @@
 <!--# Contributors: -->
 <!--# Cristiano Gavião - initial API and implementation -->
 <!--#======================================================================= -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.lunifera.dependencies</groupId>
@@ -23,10 +24,7 @@
 	<version>1.7.0</version>
 
 	<properties>
-		<vaadin.addon.dcharts.version>1.7.0</vaadin.addon.dcharts.version>
-		<vaadin.version>7.3.7</vaadin.version>
 		<lunifera.build.ignore.baseline>true</lunifera.build.ignore.baseline>
-		<lunifera.build.ignore.license>true</lunifera.build.ignore.license>
 	</properties>
 
 	<scm>
@@ -39,56 +37,33 @@
 		<dependency>
 			<groupId>org.vaadin.addons</groupId>
 			<artifactId>dcharts-widget</artifactId>
-			<version>${vaadin.addon.dcharts.version}</version>
+			<version>1.7.0</version>
 		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-server</artifactId>
-			<version>${vaadin.version}</version>
-		</dependency>
-		<!-- mvn install:install-file -Dfile=icepush.jar -DgroupId=org.icefaces 
-			\ -DartifactId=icepush -Dversion=2.0.0-alpha3 -Dpackaging=jar -->
-		<!-- mvn install:install-file -Dfile=icepush-gwt.jar -DgroupId=org.icefaces 
-			\ -DartifactId=icepush-gwt -Dversion=2.0.0-alpha3 -Dpackaging=jar -->
 	</dependencies>
+
 	<build>
 		<plugins>
-			<!-- Ignore Check compatibility with Java API -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>animal-sniffer-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>enforce-java-api-compatibility</id>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<extensions>true</extensions>
 				<configuration>
-					<unpackBundle>true</unpackBundle>
 					<instructions>
-						<Bundle-SymbolicName>org.lunifera.dependencies.bundle.vaadin.addon.dcharts;singleton:=true</Bundle-SymbolicName>
+						<Bundle-Name>dCharts</Bundle-Name>
+						<Bundle-Version>1.7.0</Bundle-Version>
+						<Bundle-SymbolicName>org.lunifera.dependencies.bundle.vaadin.addon.dcharts</Bundle-SymbolicName>
 						<Embed-Dependency>
 							groupId=org.vaadin.addons;artifactId=dcharts-widget;scope=compile;inline=true,
 						</Embed-Dependency>
-						<Export-Package>
-							!com.vaadin.*,
-							!com.google.*,
-							!org.osgi.*,
-							!org.w3c.*,
-							!org.jsoup.*,
-							org.dussan.*;version=${vaadin.addon.dcharts.version};-split-package:=merge-last
-						</Export-Package>
 						<Import-Package>
 							*
 						</Import-Package>
-						<_removeheaders>Ignore-Package</_removeheaders>
+						<Export-Package>
+							!com.google.*,
+							!org.osgi.*,
+							!org.w3c.*,
+							*
+						</Export-Package>
 						<_nouses>true</_nouses>
 					</instructions>
 				</configuration>
