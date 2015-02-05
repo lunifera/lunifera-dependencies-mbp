@@ -53,7 +53,7 @@
 						<Bundle-Version>1.7.0</Bundle-Version>
 						<Bundle-SymbolicName>org.lunifera.dependencies.bundle.vaadin.addon.dcharts</Bundle-SymbolicName>
 						<Embed-Dependency>
-							groupId=org.vaadin.addons;artifactId=dcharts-widget;scope=compile;inline=true,
+							dependencies
 						</Embed-Dependency>
 						<Import-Package>
 							*
