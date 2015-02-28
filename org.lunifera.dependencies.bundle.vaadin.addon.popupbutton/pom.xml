@@ -1,0 +1,89 @@
+<!--#======================================================================= -->
+<!--# Copyright (c) 2012, 2013 Committers of lunifera.org - Lunifera.org. -->
+<!--# All rights reserved. This program and the accompanying materials -->
+<!--# are made available under the terms of the Eclipse Public License v1.0 -->
+<!--# which accompanies this distribution, and is available at -->
+<!--# http://www.eclipse.org/legal/epl-v10.html -->
+<!--# -->
+<!--# Contributors: -->
+<!--# Cristiano Gavião - initial API and implementation -->
+<!--#======================================================================= -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.lunifera.dependencies</groupId>
+		<artifactId>lunifera-dependencies-mbp</artifactId>
+		<version>0.3.3-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>org.lunifera.dependencies.bundle.vaadin.addon.popupbutton</artifactId>
+	<name>Lunifera Dependencies : Vaadin popup button</name>
+	<packaging>bundle</packaging>
+	<description>Vaadin popupbutton</description>
+	<version>0.9.11.v7</version>
+
+	<properties>
+		<lunifera.build.ignore.baseline>true</lunifera.build.ignore.baseline>
+	</properties>
+
+	<scm>
+		<connection>${lunifera.scm.connection}</connection>
+		<developerConnection>${lunifera.scm.connection.dev}</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.vaadin.addons</groupId>
+			<artifactId>popupbutton</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Name>Filtertable</Bundle-Name>
+						<Bundle-Version>1.0.0</Bundle-Version>
+						<Bundle-SymbolicName>Filtertable</Bundle-SymbolicName>
+						<Embed-Dependency>
+							groupId=org.vaadin.addons;artifactId=popupbutton;version=2.5.0;scope=compile;inline=true,
+						</Embed-Dependency>
+						<Import-Package>
+							*
+						</Import-Package>
+						<Export-Package>
+							!LICENSE,!LICENSE.txt,!THIRD-PARTY.txt,!NOTICE,!README.txt,!VERSION.txt,!build.properties,
+							*
+						</Export-Package>
+						<_nouses>true</_nouses>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>vaadin-addons</id>
+			<url>http://maven.vaadin.com/vaadin-addons</url>
+		</repository>
+		<repository>
+			<id>vaadin-snapshots</id>
+			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

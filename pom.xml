@@ -47,10 +47,12 @@
 
 	<modules>
 		<module>org.lunifera.dependencies.bundle.drools.api</module>
-		<module>org.lunifera.dependencies.bundle.vaadin.addon.jpacontainer</module>
-		<module>org.lunifera.dependencies.bundle.vaadin.addon.dcharts</module>
 		<module>org.lunifera.dependencies.bundle.jackrabbit-core</module>
 		<module>org.lunifera.dependencies.bundle.poi.ooxml</module>
+		<module>org.lunifera.dependencies.bundle.vaadin.addon.dcharts</module>
+		<module>org.lunifera.dependencies.bundle.vaadin.addon.filteringtable</module>
+		<module>org.lunifera.dependencies.bundle.vaadin.addon.jpacontainer</module>
+		<module>org.lunifera.dependencies.bundle.vaadin.addon.popupbutton</module>
 	</modules>
 
 </project>
