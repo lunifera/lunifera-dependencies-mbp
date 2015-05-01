@@ -18,10 +18,10 @@
 	</parent>
 
 	<artifactId>org.lunifera.dependencies.bundle.drools.api</artifactId>
-	<version>5.1.1</version>
+	<version>5.5.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
-	<name>Lunifera Dependencies : Drools API</name>
-	<description>Drools API for lunifera-dependencies-mbp</description>
+	<name>Compex Dependencies : Drools API</name>
+	<description>Drools API for compex-dependencies-mbp</description>
 	<properties>
 		<lunifera.build.ignore.baseline>true</lunifera.build.ignore.baseline>
 	</properties>
@@ -33,11 +33,6 @@
 	</scm>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.drools</groupId>
-			<artifactId>drools-api</artifactId>
-			<version>5.1.1</version>
-		</dependency>
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-compiler</artifactId>
@@ -182,6 +177,21 @@
 			<version>2.2.4</version>
 		</dependency>
 		<dependency>
+			<groupId>javax.jdo</groupId>
+			<artifactId>jdo</artifactId>
+			<version>2.0-20050809.1515</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.jms</groupId>
+			<artifactId>jms</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.rules</groupId>
+			<artifactId>com.springsource.javax.rules</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>1.1.0.Final</version>
@@ -197,6 +207,11 @@
 			<version>1.0.2</version>
 		</dependency>
 		<dependency>
+			<groupId>oracle</groupId>
+			<artifactId>xmlparser</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.geronimo.specs</groupId>
 			<artifactId>geronimo-javamail_1.4_spec</artifactId>
 			<version>1.7.1</version>
@@ -207,9 +222,19 @@
 			<version>2.2.8</version>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.jackrabbit</groupId>
+			<artifactId>jackrabbit-spi</artifactId>
+			<version>2.2.8</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.mina</groupId>
 			<artifactId>mina-core</artifactId>
 			<version>2.0.0-RC1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.btm</groupId>
+			<artifactId>btm</artifactId>
+			<version>2.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
@@ -394,9 +419,19 @@
 			<artifactId>xz</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>xom</groupId>
+			<artifactId>xom</artifactId>
+			<version>1.2.5</version>
+		</dependency>
 	</dependencies>
 
+	<!-- This version -->
+	<!-- <Bundle-Version>5.5.1.Final</Bundle-Version> -->
+	<!-- needs parent -mbp2. -->
+
 	<build>
+		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.felix</groupId>
@@ -405,86 +440,89 @@
 				<configuration>
 					<instructions>
 						<Bundle-Name>org.drools.api</Bundle-Name>
-						<Bundle-Version>5.1.1.Final</Bundle-Version>
 						<Bundle-SymbolicName>org.drools.api;singleton:=true</Bundle-SymbolicName>
+						<Bundle-Activator>org.drools.api.Activator</Bundle-Activator>
 						<Embed-Dependency>
-							groupId=org.drools;artifactId=drools-api;version=5.1.1;scope=compile;inline=true,
-							groupId=org.drools;artifactId=drools-compiler;version=5.5.0.Final;scope=compile;inline=true,
+							groupId=org.drools;artifactId=drools-compiler;version=5.5.0.Final;scope=compile;inline=false,
 							groupId=org.drools;artifactId=drools-compiler;version=5.5.0.Final;classifier=source;scope=compile,
-							groupId=org.drools;artifactId=drools-core;version=5.5.0.Final;scope=compile;inline=true,
+							groupId=org.drools;artifactId=drools-core;version=5.5.0.Final;scope=compile;inline=false,
 							groupId=org.drools;artifactId=drools-core;version=5.5.0.Final;classifier=source;scope=compile,
-							groupId=org.drools;artifactId=drools-decisiontables;version=5.5.0.Final;scope=compile;inline=true,
+							groupId=org.drools;artifactId=drools-decisiontables;version=5.5.0.Final;scope=compile;inline=false,
 							groupId=org.drools;artifactId=drools-decisiontables;version=5.5.0.Final;classifier=source;scope=compile,
-							groupId=org.drools;artifactId=drools-jsr94;version=5.5.0.Final;scope=compile;inline=true,
-							groupId=org.drools;artifactId=drools-persistence-jpa;version=5.5.0.Final;scope=compile;inline=true,
+							groupId=org.drools;artifactId=drools-jsr94;version=5.5.0.Final;scope=compile;inline=false,
+							groupId=org.drools;artifactId=drools-persistence-jpa;version=5.5.0.Final;scope=compile;inline=false,
 							groupId=org.drools;artifactId=drools-persistence-jpa;version=5.5.0.Final;classifier=source;scope=compile,
-							groupId=org.drools;artifactId=drools-templates;version=5.5.0.Final;scope=compile;inline=true,
+							groupId=org.drools;artifactId=drools-templates;version=5.5.0.Final;scope=compile;inline=false,
 							groupId=org.drools;artifactId=drools-templates;version=5.5.0.Final;classifier=source;scope=compile,
-							groupId=org.drools;artifactId=drools-verifier;version=5.5.0.Final;scope=compile;inline=true,
+							groupId=org.drools;artifactId=drools-verifier;version=5.5.0.Final;scope=compile;inline=false,
 							groupId=org.drools;artifactId=drools-verifier;version=5.5.0.Final;classifier=source;scope=compile,
-							groupId=org.drools;artifactId=knowledge-api;version=5.5.0.Final;scope=compile;inline=true,
+							groupId=org.drools;artifactId=knowledge-api;version=5.5.0.Final;scope=compile;inline=false,
 							groupId=org.drools;artifactId=knowledge-api;version=5.5.0.Final;classifier=source;scope=compile,
-							groupId=org.drools;artifactId=knowledge-internal-api;version=5.5.0.Final;scope=compile;inline=true,
+							groupId=org.drools;artifactId=knowledge-internal-api;version=5.5.0.Final;scope=compile;inline=false,
 							groupId=org.drools;artifactId=knowledge-internal-api;version=5.5.0.Final;classifier=source;scope=compile,
-							groupId=antlr;artifactId=antlr;version=2.7.7;scope=compile;inline=true,
-							groupId=bouncycastle;artifactId=bcmail-jdk14;version=138;scope=compile;inline=true,
-							groupId=bouncycastle;artifactId=bcprov-jdk14;version=138;scope=compile;inline=true,
-							groupId=cglib;artifactId=cglib-nodep;version=2.2;scope=compile;inline=true,
-							groupId=dom4j;artifactId=dom4j;version=1.6.1;scope=compile;inline=true,
-							groupId=javax.el;artifactId=javax.el-api;version=2.2.4;scope=compile;inline=true,
-							groupId=javax.validation;artifactId=validation-api;version=1.1.0.Final;scope=compile;inline=true,
-							groupId=com.fasterxml;artifactId=classmate;version=1.0.0;scope=compile;inline=true,
-							groupId=com.google.protobuf;artifactId=protobuf-java;version=2.4.1;scope=compile;inline=true,
-							groupId=com.lowagie;artifactId=itext;version=2.1.2;scope=compile;inline=true,
-							groupId=com.thoughtworks.xstream;artifactId=xstream;version=1.5.0-SNAPSHOT;scope=compile;inline=true,
-							groupId=net.sf.jxls;artifactId=jxls-core;version=1.0.1;scope=compile;inline=true,
-							groupId=net.sf.jxls;artifactId=jxls-reader;version=1.0.1;scope=compile;inline=true,
-							groupId=org.apache.geronimo.specs;artifactId=geronimo-javamail_1.4_spec;version=1.7.1;scope=compile;inline=true,
-							groupId=org.apache.jackrabbit;artifactId=jackrabbit-core;version=2.2.8;scope=compile;inline=true,
-							groupId=org.apache.mina;artifactId=mina-core;version=2.0.0-RC1;scope=compile;inline=true,
-							groupId=org.glassfish.web;artifactId=javax-el;version=2.2.4;scope=compile;inline=true,
-							groupId=org.hibernate;artifactId=hibernate-core;version=4.3.0.Final;scope=compile;inline=true,
-							groupId=org.hibernate;artifactId=hibernate-entitymanager;version=4.3.0.Final;scope=compile;inline=true,
-							groupId=org.hibernate;artifactId=hibernate-envers;version=4.3.0.Final;scope=compile;inline=true,
-							groupId=org.hibernate;artifactId=hibernate-jpamodelgen;version=4.3.0.Final;scope=compile;inline=true,
-							groupId=org.hibernate;artifactId=hibernate-osgi;version=4.3.0.Final;scope=compile;inline=true,
-							groupId=org.hibernate;artifactId=hibernate-validator;version=5.0.2.Final;scope=compile;inline=true,
-							groupId=org.hibernate;artifactId=hibernate-validator-annotation-processor;version=5.0.2.Final;scope=compile;inline=true,
-							groupId=org.hibernate;artifactId=hibernate-validator-cdi;version=5.0.2.Final;scope=compile;inline=true,
-							groupId=org.hibernate.common;artifactId=hibernate-commons-annotations;version=4.0.4.Final;scope=compile;inline=true,
-							groupId=org.hibernate.javax.persistence;artifactId=hibernate-jpa-2.1-api;version=1.0.0.Final;scope=compile;inline=true,
-							groupId=org.javassist;artifactId=javassist;version=3.18.1-GA;scope=compile;inline=true,
-							groupId=org.jboss;artifactId=jandex;version=1.1.0.Final;scope=compile;inline=true,
-							groupId=org.jboss.logging;artifactId=jboss-logging;version=3.1.1.GA;scope=compile;inline=true,
-							groupId=org.jboss.spec.javax.transaction;artifactId=jboss-transaction-api_1.2_spec;version=1.0.0.Final;scope=compile;inline=true,
-							groupId=org.jbpm;artifactId=jbpm-bam;version=5.4.0.Final;scope=compile;inline=true,
+							groupId=antlr;artifactId=antlr;version=2.7.7;scope=compile;inline=false,
+							groupId=bouncycastle;artifactId=bcmail-jdk14;version=138;scope=compile;inline=false,
+							groupId=bouncycastle;artifactId=bcprov-jdk14;version=138;scope=compile;inline=false,
+							groupId=cglib;artifactId=cglib-nodep;version=2.2;scope=compile;inline=false,
+							groupId=dom4j;artifactId=dom4j;version=1.6.1;scope=compile;inline=false,
+							groupId=javax.el;artifactId=javax.el-api;version=2.2.4;scope=compile;inline=false,
+							groupId=javax.rules;artifactId=com.springsource.javax.rules;version=1.1.0;scope=compile;inline=false,
+							groupId=javax.jdo;artifactId=jdo;version=2.0-20050809.1515;scope=compile;inline=false,
+							groupId=com.fasterxml;artifactId=classmate;version=1.0.0;scope=compile;inline=false,
+							groupId=com.google.protobuf;artifactId=protobuf-java;version=2.4.1;scope=compile;inline=false,
+							groupId=com.lowagie;artifactId=itext;version=2.1.2;scope=compile;inline=false,
+							groupId=com.thoughtworks.xstream;artifactId=xstream;version=1.5.0-SNAPSHOT;scope=compile;inline=false,
+							groupId=net.sf.jxls;artifactId=jxls-core;version=1.0.1;scope=compile;inline=false,
+							groupId=net.sf.jxls;artifactId=jxls-reader;version=1.0.1;scope=compile;inline=false,
+							groupId=oracle;artifactId=xmlparser;version=2.0;scope=compile;inline=false,
+							groupId=org.apache.geronimo.specs;artifactId=geronimo-javamail_1.4_spec;version=1.7.1;scope=compile;inline=false,
+							groupId=org.apache.jackrabbit;artifactId=jackrabbit-core;version=2.2.8;scope=compile;inline=false,
+							groupId=org.apache.jackrabbit;artifactId=jackrabbit-spi;version=2.2.8;scope=compile;inline=false,
+							groupId=org.apache.mina;artifactId=mina-core;version=2.0.0-RC1;scope=compile;inline=false,
+							groupId=org.codehaus.btm;artifactId=btm;version=2.0.1;scope=compile;inline=false,
+							groupId=org.glassfish.web;artifactId=javax-el;version=2.2.4;scope=compile;inline=false,
+							groupId=org.hibernate;artifactId=hibernate-core;version=4.3.0.Final;scope=compile;inline=false,
+							groupId=org.hibernate;artifactId=hibernate-entitymanager;version=4.3.0.Final;scope=compile;inline=false,
+							groupId=org.hibernate;artifactId=hibernate-envers;version=4.3.0.Final;scope=compile;inline=false,
+							groupId=org.hibernate;artifactId=hibernate-jpamodelgen;version=4.3.0.Final;scope=compile;inline=false,
+							groupId=org.hibernate;artifactId=hibernate-osgi;version=4.3.0.Final;scope=compile;inline=false,
+							groupId=org.hibernate;artifactId=hibernate-validator;version=5.0.2.Final;scope=compile;inline=false,
+							groupId=org.hibernate;artifactId=hibernate-validator-annotation-processor;version=5.0.2.Final;scope=compile;inline=false,
+							groupId=org.hibernate;artifactId=hibernate-validator-cdi;version=5.0.2.Final;scope=compile;inline=false,
+							groupId=org.hibernate.common;artifactId=hibernate-commons-annotations;version=4.0.4.Final;scope=compile;inline=false,
+							groupId=org.javassist;artifactId=javassist;version=3.18.1-GA;scope=compile;inline=false,
+							groupId=org.jboss;artifactId=jandex;version=1.1.0.Final;scope=compile;inline=false,
+							groupId=org.jboss.logging;artifactId=jboss-logging;version=3.1.1.GA;scope=compile;inline=false,
+							groupId=org.jbpm;artifactId=jbpm-bam;version=5.4.0.Final;scope=compile;inline=false,
 							groupId=org.jbpm;artifactId=jbpm-bam;version=5.4.0.Final;classifier=source;scope=compile,
-							groupId=org.jbpm;artifactId=jbpm-bpmn2;version=5.4.0.Final;scope=compile;inline=true,
+							groupId=org.jbpm;artifactId=jbpm-bpmn2;version=5.4.0.Final;scope=compile;inline=false,
 							groupId=org.jbpm;artifactId=jbpm-bpmn2;version=5.4.0.Final;classifier=source;scope=compile,
-							groupId=org.jbpm;artifactId=jbpm-flow;version=5.4.0.Final;scope=compile;inline=true,
+							groupId=org.jbpm;artifactId=jbpm-flow;version=5.4.0.Final;scope=compile;inline=false,
 							groupId=org.jbpm;artifactId=jbpm-flow;version=5.4.0.Final;classifier=source;scope=compile,
-							groupId=org.jbpm;artifactId=jbpm-flow-builder;version=5.4.0.Final;scope=compile;inline=true,
+							groupId=org.jbpm;artifactId=jbpm-flow-builder;version=5.4.0.Final;scope=compile;inline=false,
 							groupId=org.jbpm;artifactId=jbpm-flow-builder;version=5.4.0.Final;classifier=source;scope=compile,
-							groupId=org.jbpm;artifactId=jbpm-human-task-core;version=5.4.0.Final;scope=compile;inline=true,
+							groupId=org.jbpm;artifactId=jbpm-human-task-core;version=5.4.0.Final;scope=compile;inline=false,
 							groupId=org.jbpm;artifactId=jbpm-human-task-core;version=5.4.0.Final;classifier=source;scope=compile,
-							groupId=org.jbpm;artifactId=jbpm-human-task-mina;version=5.4.0.Final;scope=compile;inline=true,
+							groupId=org.jbpm;artifactId=jbpm-human-task-mina;version=5.4.0.Final;scope=compile;inline=false,
 							groupId=org.jbpm;artifactId=jbpm-human-task-mina;version=5.4.0.Final;classifier=source;scope=compile,
-							groupId=org.jbpm;artifactId=jbpm-persistence-jpa;version=5.4.0.Final;scope=compile;inline=true,
+							groupId=org.jbpm;artifactId=jbpm-persistence-jpa;version=5.4.0.Final;scope=compile;inline=false,
 							groupId=org.jbpm;artifactId=jbpm-persistence-jpa;version=5.4.0.Final;classifier=source;scope=compile,
-							groupId=org.jbpm;artifactId=jbpm-workitems;version=5.4.0.Final;scope=compile;inline=true,
+							groupId=org.jbpm;artifactId=jbpm-workitems;version=5.4.0.Final;scope=compile;inline=false,
 							groupId=org.jbpm;artifactId=jbpm-workitems;version=5.4.0.Final;classifier=source;scope=compile,
-							groupId=org.jdom;artifactId=jdom;version=1.1.3;scope=compile;inline=true,
-							groupId=org.mvel;artifactId=mvel2;version=2.1.6.Final;scope=compile;inline=true,
-							groupId=org.springframework;artifactId=spring-orm;version=4.0.2.RELEASE;scope=compile;inline=true,
-							groupId=org.tukaani;artifactId=xz;version=1.0;scope=compile;inline=true
+							groupId=org.jdom;artifactId=jdom;version=1.1.3;scope=compile;inline=false,
+							groupId=org.mvel;artifactId=mvel2;version=2.1.6.Final;scope=compile;inline=false,
+							groupId=org.springframework;artifactId=spring-orm;version=4.0.2.RELEASE;scope=compile;inline=false,
+							groupId=org.tukaani;artifactId=xz;version=1.0;scope=compile;inline=false
+							groupId=xom;artifactId=xom;version=1.2.5;scope=compile;inline=false
 						</Embed-Dependency>
 						<Import-Package>
-							*
+							!com.apple.mrj,!com.bea.xml.stream,!net.sf.cglib.asm.util,!oracle.xml.parser,javax.annotation,javax.jms,
+							*;resolution:=optional
 						</Import-Package>
 						<Export-Package>
 							!LICENSE,!LICENSE.txt,!THIRD-PARTY.txt,!NOTICE,!README.txt,!VERSION.txt,!build.properties,
 							!change-set-1.0.0.xsd,!change-set.xsd,
-							org.drools.*;version="5.1.1",org.jbpm.*
+							bitronix.*;version="2.0.1",org.drools.*;version="5.5.1",org.jbpm.*,org.hibernate.*
 						</Export-Package>
 						<_nouses>true</_nouses>
 					</instructions>
