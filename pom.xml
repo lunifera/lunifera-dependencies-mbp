@@ -46,7 +46,7 @@
 	</distributionManagement>
 
 	<modules>
-		<module>org.lunifera.dependencies.bundle.drools.api</module>
+		<module>org.lunifera.dependencies.bundle.drools.allinone</module>
 		<module>org.lunifera.dependencies.bundle.jackrabbit-core</module>
 		<module>org.lunifera.dependencies.bundle.poi.ooxml</module>
 		<module>org.lunifera.dependencies.bundle.vaadin.addon.dcharts</module>

@@ -6,7 +6,7 @@
 <!--# http://www.eclipse.org/legal/epl-v10.html -->
 <!--# -->
 <!--# Contributors: -->
-<!--# Cristiano Gavião - initial API and implementation -->
+<!--# Klemens Edler - initial API and implementation -->
 <!--#======================================================================= -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -17,11 +17,11 @@
 		<version>0.3.3-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>org.lunifera.dependencies.bundle.drools.api</artifactId>
+	<artifactId>org.lunifera.dependencies.bundle.drools.allinone</artifactId>
 	<version>5.5.1-SNAPSHOT</version>
 	<packaging>bundle</packaging>
-	<name>Compex Dependencies : Drools API</name>
-	<description>Drools API for compex-dependencies-mbp</description>
+	<name>Compex Dependencies : Drools Allinone</name>
+	<description>Drools Allinone Bundle</description>
 	<properties>
 		<lunifera.build.ignore.baseline>true</lunifera.build.ignore.baseline>
 	</properties>
