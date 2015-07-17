@@ -49,6 +49,7 @@
 <!-- 		<module>org.lunifera.dependencies.bundle.apache.beanvalidation</module> -->
 		<module>org.lunifera.dependencies.bundle.drools.allinone</module>
 		<module>org.lunifera.dependencies.bundle.jackrabbit-core</module>
+		<module>org.lunifera.dependencies.bundle.knowhowlab.osgi.testing.assertions</module>
 		<module>org.lunifera.dependencies.bundle.poi.ooxml</module>
 		<module>org.lunifera.dependencies.bundle.vaadin.addon.dcharts</module>
 		<module>org.lunifera.dependencies.bundle.vaadin.addon.filteringtable</module>
