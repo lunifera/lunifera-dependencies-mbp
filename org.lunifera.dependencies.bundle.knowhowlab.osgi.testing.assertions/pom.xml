@@ -72,5 +72,5 @@
 		</plugins>
 	</build>
 
-	<groupId>de.compex.dependencies</groupId>
+	<groupId>org.lunifera.dependencies</groupId>
 </project>
