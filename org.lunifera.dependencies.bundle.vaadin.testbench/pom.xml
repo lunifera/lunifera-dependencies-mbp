@@ -139,7 +139,7 @@
 							groupId=com.vaadin;artifactId=vaadin-testbench-core;version=4.0.3;classifier=sources;scope=compile;inline=false
 						</Embed-Dependency>
 						<Import-Package>
-							*
+							*;resolution:=optional
 						</Import-Package>
 						<Export-Package>
 							!LICENSE,!LICENSE.txt,!THIRD-PARTY.txt,!NOTICE,!README.txt,!VERSION.txt,!build.properties,!customProfile*,
