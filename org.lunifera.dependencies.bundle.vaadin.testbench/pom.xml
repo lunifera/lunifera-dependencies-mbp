@@ -1,0 +1,158 @@
+<!--#======================================================================= -->
+<!--# Copyright (c) 2012, 2013 Committers of lunifera.org - Lunifera.org. -->
+<!--# All rights reserved. This program and the accompanying materials -->
+<!--# are made available under the terms of the Eclipse Public License v1.0 -->
+<!--# which accompanies this distribution, and is available at -->
+<!--# http://www.eclipse.org/legal/epl-v10.html -->
+<!--# -->
+<!--# Contributors: -->
+<!--# Klemens Edler - initial API and implementation -->
+<!--#======================================================================= -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.lunifera.releng.maven</groupId>
+		<artifactId>lunifera-releng-maven-parent-mbp</artifactId>
+		<version>0.12.5-SNAPSHOT</version>
+	</parent>
+
+	<groupId>org.lunifera.dependencies</groupId>
+	<artifactId>org.lunifera.dependencies.bundle.vaadin.testbench</artifactId>
+	<name>Lunifera Dependencies : Vaadin Testbench</name>
+	<packaging>bundle</packaging>
+	<description>Vaadin Testbench</description>
+	<version>7.4.8</version>
+
+	<properties>
+		<lunifera.build.ignore.baseline>true</lunifera.build.ignore.baseline>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>vaadin-addons</id>
+			<url>http://maven.vaadin.com/vaadin-addons</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-exec</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.20.0-GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-api</artifactId>
+			<version>2.46.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-api</artifactId>
+			<version>2.46.0</version>
+			<classifier>sources</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-firefox-driver</artifactId>
+			<version>2.46.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.46.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>2.46.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>2.46.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>2.46.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-testbench</artifactId>
+			<version>4.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-testbench-api</artifactId>
+			<version>7.4.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-testbench-api</artifactId>
+			<version>7.4.8</version>
+			<classifier>sources</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-testbench-core</artifactId>
+			<version>4.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-testbench-core</artifactId>
+			<version>4.0.3</version>
+			<classifier>sources</classifier>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Name>Vaadin Testbench Allinone Bundle</Bundle-Name>
+						<Bundle-Version>7.4.8</Bundle-Version>
+						<Bundle-SymbolicName>org.lunifera.dependencies.bundle.vaadin.testbench</Bundle-SymbolicName>
+						<Embed-Dependency>
+							groupId=org.apache.commons;artifactId=commons-exec;version=1.3;scope=compile;inline=false,
+							groupId=org.javassist;artifactId=javassist;version=3.20.0-GA;scope=compile;inline=false,
+							groupId=org.seleniumhq.selenium;artifactId=selenium-api;version=2.46.0;scope=compile;inline=false,
+							groupId=org.seleniumhq.selenium;artifactId=selenium-api;version=2.46.0;classifier=sources;scope=compile;inline=false,
+							groupId=org.seleniumhq.selenium;artifactId=selenium-firefox-driver;version=2.46.0;scope=compile;inline=false,
+							groupId=org.seleniumhq.selenium;artifactId=selenium-java;version=2.46.0;scope=compile;inline=false,
+							groupId=org.seleniumhq.selenium;artifactId=selenium-remote-driver;version=2.46.0;scope=compile;inline=false,
+							groupId=org.seleniumhq.selenium;artifactId=selenium-server;version=2.46.0;scope=compile;inline=false,
+							groupId=org.seleniumhq.selenium;artifactId=selenium-support;version=2.46.0;scope=compile;inline=false,
+							groupId=com.vaadin;artifactId=vaadin-testbench;version=4.0.3;scope=compile;inline=false,
+							groupId=com.vaadin;artifactId=vaadin-testbench-api;version=7.4.8;scope=compile;inline=false,
+							groupId=com.vaadin;artifactId=vaadin-testbench-api;version=7.4.8;classifier=sources;scope=compile;inline=false,
+							groupId=com.vaadin;artifactId=vaadin-testbench-core;version=4.0.3;scope=compile;inline=false,
+							groupId=com.vaadin;artifactId=vaadin-testbench-core;version=4.0.3;classifier=sources;scope=compile;inline=false
+						</Embed-Dependency>
+						<Import-Package>
+							*
+						</Import-Package>
+						<Export-Package>
+							!LICENSE,!LICENSE.txt,!THIRD-PARTY.txt,!NOTICE,!README.txt,!VERSION.txt,!build.properties,!customProfile*,
+							com.thoughtworks.*;version="2.46.0",
+							org.openqa.*;version="2.46.0",
+							core.*;version="4.0.3",
+							*
+						</Export-Package>
+						<_nouses>true</_nouses>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

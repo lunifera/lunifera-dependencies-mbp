@@ -55,6 +55,7 @@
 		<module>org.lunifera.dependencies.bundle.vaadin.addon.filteringtable</module>
 		<module>org.lunifera.dependencies.bundle.vaadin.addon.jpacontainer</module>
 		<module>org.lunifera.dependencies.bundle.vaadin.addon.popupbutton</module>
+		<module>org.lunifera.dependencies.bundle.vaadin.testbench</module>
 	</modules>
 
 </project>
