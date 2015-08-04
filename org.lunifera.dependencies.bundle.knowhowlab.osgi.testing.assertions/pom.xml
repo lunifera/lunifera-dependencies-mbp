@@ -94,10 +94,7 @@
 						</Embed-Dependency>
 						<Import-Package>
 							org.osgi.framework;version="1.3.0",
-							net.sf.*;resolution:=optional,
-							org.hamcrest.*;resolution:=optional,
-							org.junit.*;resolution:=optional,
-							*
+							*;resolution:=optional
 						</Import-Package>
 						<Export-Package>
 							!LICENSE,!LICENSE.txt,!THIRD-PARTY.txt,!NOTICE,!README.txt,!VERSION.txt,!build.properties,
