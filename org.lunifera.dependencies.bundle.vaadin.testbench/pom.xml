@@ -11,11 +11,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.lunifera.releng.maven</groupId>
-		<artifactId>lunifera-releng-maven-parent-mbp</artifactId>
-		<version>0.12.5-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.lunifera.dependencies</groupId>
+        <artifactId>lunifera-dependencies-mbp</artifactId>
+        <version>0.3.3-SNAPSHOT</version>
+    </parent>
 
 	<groupId>org.lunifera.dependencies</groupId>
 	<artifactId>org.lunifera.dependencies.bundle.vaadin.testbench</artifactId>
