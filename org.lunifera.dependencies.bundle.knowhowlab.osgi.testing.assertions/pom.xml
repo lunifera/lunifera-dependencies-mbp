@@ -11,11 +11,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.lunifera.dependencies</groupId>
-        <artifactId>lunifera-dependencies-mbp</artifactId>
-        <version>0.3.3-SNAPSHOT</version>
-    </parent>
+	<parent>
+		<groupId>org.lunifera.releng.maven</groupId>
+		<artifactId>lunifera-releng-maven-parent-mbp</artifactId>
+		<version>0.12.5-SNAPSHOT</version>
+	</parent>
 
 	<artifactId>org.lunifera.dependencies.bundle.knowhowlab.osgi.testing.assertions</artifactId>
 	<name>Lunifera Dependencies : Knowhowlab assertions</name>
@@ -40,36 +40,6 @@
 			<artifactId>org.knowhowlab.osgi.testing.assertions</artifactId>
 			<version>1.3.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-core</artifactId>
-			<version>1.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-integration</artifactId>
-			<version>1.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hamcrest</groupId>
-			<artifactId>hamcrest-library</artifactId>
-			<version>1.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>3.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.dexmaker</groupId>
-			<artifactId>dexmaker</artifactId>
-			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jmock</groupId>
-			<artifactId>com.springsource.org.jmock</artifactId>
-			<version>2.4.0</version>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -84,23 +54,16 @@
 						<Bundle-Version>1.3.0</Bundle-Version>
 						<Bundle-SymbolicName>org.knowhowlab.osgi.testing.assertions</Bundle-SymbolicName>
 						<Embed-Dependency>
-							groupId=org.knowhowlab.osgi;artifactId=org.knowhowlab.osgi.testing.assertions;version=1.3.0;scope=compile;inline=true,
-							groupId=org.hamcrest;artifactId=hamcrest-core;version=1.3;scope=compile;inline=true,
-							groupId=org.hamcrest;artifactId=hamcrest-integration;version=1.3;scope=compile;inline=true,
-							groupId=org.hamcrest;artifactId=hamcrest-library;version=1.3;scope=compile;inline=true,
-							groupId=com.google.dexmaker;artifactId=dexmaker;version=1.0;scope=compile;inline=true,
-							groupId=org.jmock;artifactId=com.springsource.org.jmock;version=2.4.0;scope=compile;inline=true,
-							groupId=org.easymock;artifactId=easymock;version=3.3.1;scope=compile;inline=true
+							groupId=org.knowhowlab.osgi;artifactId=org.knowhowlab.osgi.testing.assertions;version=1.3.0;scope=compile;inline=true
 						</Embed-Dependency>
 						<Import-Package>
 							org.osgi.framework;version="1.3.0",
-							*;resolution:=optional
+							org.hamcrest;core=split,
+							*
 						</Import-Package>
 						<Export-Package>
 							!LICENSE,!LICENSE.txt,!THIRD-PARTY.txt,!NOTICE,!README.txt,!VERSION.txt,!build.properties,
-							org.hamcrest.*;version="1.3.0",
-							org.knowhowlab.*;version="1.3.0",
-							*
+							*;version="1.3.0"
 						</Export-Package>
 						<_nouses>false</_nouses>
 					</instructions>
