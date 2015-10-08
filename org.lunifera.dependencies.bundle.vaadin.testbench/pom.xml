@@ -21,7 +21,7 @@
 	<name>Lunifera Dependencies : Vaadin Testbench</name>
 	<packaging>bundle</packaging>
 	<description>Vaadin Testbench</description>
-	<version>7.6.0.alpha6</version>
+	<version>7.3.8</version>
 
 	<properties>
 		<lunifera.build.ignore.baseline>true</lunifera.build.ignore.baseline>
@@ -89,12 +89,12 @@
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-testbench-api</artifactId>
-			<version>7.6.0.alpha6</version>
+			<version>7.4.8</version>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-testbench-api</artifactId>
-			<version>7.6.0.alpha6</version>
+			<version>7.4.8</version>
 			<classifier>sources</classifier>
 		</dependency>
 		<dependency>
@@ -132,8 +132,8 @@
 							groupId=org.seleniumhq.selenium;artifactId=selenium-server;version=2.46.0;scope=compile;inline=false,
 							groupId=org.seleniumhq.selenium;artifactId=selenium-support;version=2.46.0;scope=compile;inline=false,
 							groupId=com.vaadin;artifactId=vaadin-testbench;version=4.0.3;scope=compile;inline=false,
-							groupId=com.vaadin;artifactId=vaadin-testbench-api;version=7.6.0.alpha6;scope=compile;inline=false,
-							groupId=com.vaadin;artifactId=vaadin-testbench-api;version=7.6.0.alpha6;classifier=sources;scope=compile;inline=false,
+							groupId=com.vaadin;artifactId=vaadin-testbench-api;version=7.4.8;scope=compile;inline=false,
+							groupId=com.vaadin;artifactId=vaadin-testbench-api;version=7.4.8;classifier=sources;scope=compile;inline=false,
 							groupId=com.vaadin;artifactId=vaadin-testbench-core;version=4.0.3;scope=compile;inline=false,
 							groupId=com.vaadin;artifactId=vaadin-testbench-core;version=4.0.3;classifier=sources;scope=compile;inline=false
 						</Embed-Dependency>
