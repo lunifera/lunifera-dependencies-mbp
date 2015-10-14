@@ -119,7 +119,7 @@
 				<configuration>
 					<instructions>
 						<Bundle-Name>Vaadin Testbench Allinone Bundle</Bundle-Name>
-						<Bundle-Version>7.6.0.alpha6</Bundle-Version>
+						<Bundle-Version>7.3.8</Bundle-Version>
 						<Bundle-SymbolicName>org.lunifera.dependencies.bundle.vaadin.testbench</Bundle-SymbolicName>
 						<Embed-Dependency>
 							groupId=org.apache.commons;artifactId=commons-exec;version=1.3;scope=compile;inline=false,
