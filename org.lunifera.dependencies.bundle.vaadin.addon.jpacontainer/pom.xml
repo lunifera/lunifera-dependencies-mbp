@@ -77,6 +77,9 @@
 						<Embed-Dependency>
 							groupId=com.vaadin.addon;artifactId=jpacontainer;scope=compile;inline=true,
 						</Embed-Dependency>
+						<_exportcontents>
+							*
+						</_exportcontents>
 						<Import-Package>javax.persistence.*,javax.transaction.*,
 							javax.naming.*, com.vaadin.data.*,
 							com.vaadin.ui.*,
