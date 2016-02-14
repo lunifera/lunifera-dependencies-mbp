@@ -74,6 +74,7 @@
 					<unpackBundle>true</unpackBundle>
 					<instructions>
 						<Bundle-SymbolicName>org.lunifera.dependencies.bundle.vaadin.addon.jpacontainer;singleton:=true</Bundle-SymbolicName>
+						<Bundle-Version>3.0.0.${osgi-version-qualifier}</Bundle-Version>
 						<Embed-Dependency>
 							groupId=com.vaadin.addon;artifactId=jpacontainer;scope=compile;inline=true,
 						</Embed-Dependency>
